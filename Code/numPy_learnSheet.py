@@ -27,4 +27,3 @@ print(np.min(randint_arr))
 print(arr)
 print(arr_554)
 print(arr.argmax())             #syntax to locate the position of highest number on array
-print(arr.argmin())
