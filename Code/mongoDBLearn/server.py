@@ -10,7 +10,7 @@ database = [
     }
 ]
 
-@app.route('/led_sensor/data', methods=['POST'])
+@app.route('/sensor1', methods=['POST'])
 def postSensorData():
     data = request.json
     timestamp = data.get("timestamp")
@@ -25,14 +25,14 @@ def postSensorData():
     
     return jsonify({"message":"Data received!", "timestamp": timestamp, "sensor_value": sensor_value, "ledCondition": ledCondition})
 
-@app.route('/led_sensor/data', methods=['GET'])
+@app.route('/sensor1', methods=['GET'])
 def getSensorData():
     print("Data exported sucsessfully!")
     return jsonify(database)
 
 @app.route('/')
 def landingPage():
-    return "Landing page. Go to root /led_sensor/data to get and post sensor data."
+    return "Landing page. Go to root /led_sensor/data"
     
 
 if __name__ == '__main__':
